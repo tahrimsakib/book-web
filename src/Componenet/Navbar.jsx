@@ -1,11 +1,16 @@
 import React from "react";
 import Theme from "./Theme";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const Links = (
     <>
-      <li className="mr-2">Home</li>
-      <li className="mr-2">About</li>
+      <Link to="/">
+        <li className="mr-3 font-semibold text-xl">Home</li>
+      </Link>
+      <Link to="/about">
+        <li className="mr-3 font-semibold text-xl">About</li>
+      </Link>
     </>
   );
   return (
@@ -36,13 +41,13 @@ const Navbar = () => {
             {Links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">BoiAMi</a>
+        <a className="btn btn-ghost text-xl">BoiAmi</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
       <div className="navbar-end">
-       <Theme></Theme>
+        <Theme></Theme>
       </div>
     </div>
   );
