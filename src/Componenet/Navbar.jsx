@@ -6,10 +6,10 @@ const Navbar = () => {
   const Links = (
     <>
       <Link to="/">
-        <li className="mr-3 font-semibold text-xl">Home</li>
+        <li className="mr-3 font-semibold text-xl hover:border border-green-500 px-3 py-2 rounded-xl hover:text-green-500">Home</li>
       </Link>
       <Link to="/about">
-        <li className="mr-3 font-semibold text-xl">About</li>
+        <li className="mr-3 font-semibold text-xl hover:border border-green-500 px-3 py-2 rounded-xl hover:text-green-500">About</li>
       </Link>
     </>
   );
@@ -36,7 +36,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow "
           >
             {Links}
           </ul>

@@ -16,7 +16,7 @@ const Book = ({ b }) => {
   } = b;
   return (
     <Link to={`/BookDetails/${bookId}`}>
-      <div className="card bg-base-100 w-96 shadow-2xl p-4">
+      <div className="card bg-base-100 w-96 shadow-2xl p-4 mx-auto">
         <figure className="p-3 bg-gray-200 w-4/5 mx-auto">
           <img className="h-[166px]" src={image} alt="Shoes" />
         </figure>
@@ -24,7 +24,7 @@ const Book = ({ b }) => {
           <div className="flex justify-between  gap-5 text-amber-600">
             {tags.map((tag) => (
               <button className="bg-gray-300 p-1.5 rounded-xl font-semibold">
-                {tag}{" "}
+                {tag}
               </button>
             ))}
           </div>
