@@ -1,6 +1,5 @@
 import React from "react";
 import Bookimg from "../../public/books.jpg";
-
 const Banner = () => {
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -21,5 +20,4 @@ const Banner = () => {
     </div>
   );
 };
-
 export default Banner;

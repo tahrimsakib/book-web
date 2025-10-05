@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addToStore } from "../../Utility/AddToDB";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -7,18 +8,11 @@ const BookDetails = () => {
   console.log(id);
   const data = useLoaderData();
   const singleData = data.find((book) => book.bookId === bookId);
-  const {
-    image,
-    bookName,
-    author,
-    category,
-    publisher,
-    rating,
-    review,
-    totalPages,
-    yearOfPublishing,
-    tags,
-  } = singleData;
+  const { image, author, category, review, tags } = singleData;
+
+  const handleMakeAsRead = (id) => {
+    addToStore(id)
+  };
 
   return (
     <div className="flex justify-between gap-12 ">
@@ -32,11 +26,16 @@ const BookDetails = () => {
         <h1>Review: {review} </h1>
         <div className="flex justify-end gap-7">
           {tags.map((tag) => (
-            <button>{tag}</button>
+            <button key={tag}>{tag}</button>
           ))}
         </div>
         <div className="">
-          <button className="mr-4 btn btn-outline">Default</button>
+          <button
+            onClick={() => handleMakeAsRead(id)}
+            className="mr-4 btn btn-outline"
+          >
+            Make as read
+          </button>
           <button className="mr-4 btn btn-info">Wishlist</button>
         </div>
       </div>
